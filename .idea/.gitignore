@@ -1,6 +1,16 @@
 # Default ignored files
 /shelf/
+/compiler.xml
+/encodings.xml
+/itsolutions.iml
+/jarRepositories.xml
+/misc.xml
+/vcs.xml
 /workspace.xml
+../app/target/*
+../customerorder/target/*
+../manufacturingorder/target/*
+
 # Editor-based HTTP Client requests
 /httpRequests/
 # Environment-dependent path to Maven home directory
