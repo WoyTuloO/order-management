@@ -1,10 +1,9 @@
 package com.example.manufacturingorder.adapter.in.rest.dto;
 
-import com.example.manufacturingorder.domain.model.ManufacturingStatus;
+import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;
 
-import java.util.UUID;
 
 public record ManufacturingOrderResponse(
-        UUID orderId,
+        Long orderId,
         ManufacturingStatus status
 ) {}

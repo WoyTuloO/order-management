@@ -1,11 +1,10 @@
 package com.example.manufacturingorder.application.command;
 
-import com.example.manufacturingorder.adapter.in.rest.dto.ManufacturingItemDto;
+import com.example.manufacturingorder.domain.model.valueobject.ManufacturingItem;
 
 import java.util.List;
-import java.util.UUID;
 
 public record CreateManufacturingOrderCommand(
-        UUID customerOrderId,
-        List<ManufacturingItemDto> items
+        Long customerOrderId,
+        List<ManufacturingItem> items
 ) {}
