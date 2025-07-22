@@ -4,13 +4,10 @@ import com.example.customerorder.adapter.out.persistance.entities.CustomerOrderE
 import com.example.customerorder.application.port.out.CustomerOrderRepositoryPort;
 import com.example.customerorder.config.exceptions.CustomerResourceNotFound;
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;
-import com.example.customerorder.domain.model.enums.OrderItemStatus;
-import com.example.customerorder.domain.model.valueobject.OrderItem;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 @Repository

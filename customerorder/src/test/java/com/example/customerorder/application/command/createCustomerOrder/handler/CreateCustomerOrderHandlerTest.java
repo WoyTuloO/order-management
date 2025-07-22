@@ -8,7 +8,6 @@ import com.example.customerorder.domain.model.valueobject.OrderItem;
 import com.example.manufacturingorder.adapter.in.rest.dto.response.GetManufacturingOrderResponse;
 import com.example.manufacturingorder.domain.event.CreateManufacturingOrdersEvent;
 import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;
-import com.example.manufacturingorder.domain.model.valueobject.ManufacturingItem;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;

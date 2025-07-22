@@ -59,9 +59,9 @@ class JpaCustomerOrderRepositoryAdapterTest {
         Long orderId = 2L;
         when(orderRepository.findById(orderId)).thenReturn(Optional.empty());
 
-        assertThrows(CustomerResourceNotFound.class, () -> {
-            repositoryAdapter.findById(orderId);
-        });
+        assertThrows(CustomerResourceNotFound.class, () ->
+            repositoryAdapter.findById(orderId)
+        );
     }
 
     @Test
@@ -93,9 +93,9 @@ class JpaCustomerOrderRepositoryAdapterTest {
 
         when(orderRepository.findById(orderId)).thenReturn(Optional.empty());
 
-        assertThrows(CustomerResourceNotFound.class, () -> {
-            repositoryAdapter.update(order);
-        });
+        assertThrows(CustomerResourceNotFound.class, () ->
+            repositoryAdapter.update(order)
+        );
         verify(orderRepository, never()).save(any());
     }
 

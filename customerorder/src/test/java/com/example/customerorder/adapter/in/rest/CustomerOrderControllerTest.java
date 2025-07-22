@@ -70,7 +70,7 @@ class CustomerOrderControllerTest {
     @Test
     void getCustomerOrder_ShouldReturnOrder_WhenIdExists() {
 
-        Long orderId = 1L;
+        long orderId = 1L;
         GetCustomerOrderResponse expectedResponse = new GetCustomerOrderResponse(
                 orderId,
                 1L,
@@ -162,7 +162,7 @@ class CustomerOrderControllerTest {
     @Test
     void updateGlobalCustomerOrderStatus_ShouldThrow_WhenRequestIsNotValid() {
 
-        Long orderId = 5L;
+        long orderId = 5L;
 
         UpdateGlobalCustomerOrderStatusRequest request = new UpdateGlobalCustomerOrderStatusRequest(
                 1L,

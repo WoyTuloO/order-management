@@ -58,7 +58,7 @@ class GetCustomerOrderHandlerTest {
         assertEquals("Test order", response.info());
         assertEquals(2, response.items().size());
 
-        CustomerOrderItemResponse firstItem = response.items().get(0);
+        CustomerOrderItemResponse firstItem = response.items().getFirst();
         assertEquals(1L, firstItem.productId());
         assertEquals(2, firstItem.quantity());
         assertEquals(OrderItemStatus.PENDING, firstItem.status());
