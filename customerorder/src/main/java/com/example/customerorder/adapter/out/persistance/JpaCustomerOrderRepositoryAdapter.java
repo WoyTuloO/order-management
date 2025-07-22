@@ -2,10 +2,14 @@ package com.example.customerorder.adapter.out.persistance;
 
 import com.example.customerorder.adapter.out.persistance.entities.CustomerOrderEntity;
 import com.example.customerorder.application.port.out.CustomerOrderRepositoryPort;
+import com.example.customerorder.config.exceptions.CustomerResourceNotFound;
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;
+import com.example.customerorder.domain.model.enums.OrderItemStatus;
 import com.example.customerorder.domain.model.valueobject.OrderItem;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -17,7 +21,7 @@ public class JpaCustomerOrderRepositoryAdapter implements CustomerOrderRepositor
     public JpaCustomerOrderRepositoryAdapter(SpringDataCustomerOrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }
-
+    @Transactional
     @Override
     public Long save(CustomerOrder order) {
         CustomerOrderEntity customerOrderEntity = CustomerOrderEntity.fromDomain(order);
@@ -27,11 +31,27 @@ public class JpaCustomerOrderRepositoryAdapter implements CustomerOrderRepositor
     @Override
     public CustomerOrder findById(Long id) {
         CustomerOrderEntity customerOrderEntity = orderRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Customer order not found with id: " + id));
+                .orElseThrow(() -> new CustomerResourceNotFound("Customer order not found with id: " + id));
 
         List<OrderItem> items = customerOrderEntity.getItems().stream()
                 .map(item -> new OrderItem(item.getProductId(), item.getQuantity()))
                 .toList();
-        return new CustomerOrder(customerOrderEntity.getId(), customerOrderEntity.getCustomerId(), items, customerOrderEntity.getStatus(), customerOrderEntity.getInfo());
+        return new CustomerOrder(customerOrderEntity.getId(), customerOrderEntity.getCustomerId(), items, customerOrderEntity.getStatus(), customerOrderEntity.getInfo(), customerOrderEntity.getManufacturingOrderIds());
+    }
+
+
+    @Transactional
+    @Override
+    public void update(CustomerOrder order) {
+
+        CustomerOrderEntity entity = orderRepository.findById(order.getId())
+                .orElseThrow(() -> new CustomerResourceNotFound("Customer order not found with id: " + order.getId()));
+
+        entity.setStatus(order.getStatus());
+        entity.setInfo(order.getInfo());
+        entity.setManufacturingOrderIds(new ArrayList<>(order.getManufacturingOrderIds()));
+
+        orderRepository.save(entity);
+
     }
 }
