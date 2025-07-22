@@ -3,12 +3,9 @@ package com.example.customerorder.application.command.createCustomerOrder.handle
 import com.example.customerorder.application.command.createCustomerOrder.CreateCustomerOrderCommand;
 import com.example.customerorder.application.port.in.CreateCustomerOrderUseCase;
 import com.example.customerorder.application.port.out.CustomerOrderRepositoryPort;
+import com.example.customerorder.application.port.out.ManufacturingOrderFacadePort;
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;
 import com.example.manufacturingorder.adapter.in.rest.dto.response.GetManufacturingOrderResponse;
-import com.example.manufacturingorder.application.command.createManufacturingOrders.CreateManufacturingOrdersCommand;
-import com.example.manufacturingorder.application.port.in.CreateMultipleManufacturingOrdersUseCase;
-import com.example.manufacturingorder.application.port.in.GetCustomersManufacturingOrdersUseCase;
-import com.example.manufacturingorder.application.query.getCustomersManufacturingOrders.GetCustomersManufacturingOrdersQuery;
 import com.example.manufacturingorder.domain.event.CreateManufacturingOrdersEvent;
 import com.example.manufacturingorder.domain.model.valueobject.ManufacturingItem;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +20,7 @@ import java.util.List;
 public class CreateCustomerOrderHandler implements CreateCustomerOrderUseCase {
 
     private final CustomerOrderRepositoryPort customerOrderRepositoryPort;
-    private final GetCustomersManufacturingOrdersUseCase getCustomersManufacturingOrdersUseCase;
+    private final ManufacturingOrderFacadePort manufacturingOrdersFacadeAdapter;
 
     private final ApplicationEventPublisher eventPublisher;
 
@@ -44,7 +41,7 @@ public class CreateCustomerOrderHandler implements CreateCustomerOrderUseCase {
 
 
         List<Long> manufacturingOrdersIds = new ArrayList<>(
-                getCustomersManufacturingOrdersUseCase.getManufacturingOrders(new GetCustomersManufacturingOrdersQuery(customerOrder.getId()))
+                manufacturingOrdersFacadeAdapter.getCustomerOrdersManufacturingOrders(customerOrder.getId())
                         .stream().map(GetManufacturingOrderResponse::id).toList()
         );
 

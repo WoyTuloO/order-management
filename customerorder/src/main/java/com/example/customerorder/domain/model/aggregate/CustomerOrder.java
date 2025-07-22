@@ -7,7 +7,7 @@ import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+
 
 @Data
 @AllArgsConstructor
@@ -35,10 +35,6 @@ public class CustomerOrder {
     public static CustomerOrder recreate(Long id, Long customerId, List<OrderItem> items,
                                          OrderStatus status, String cancellationReason, List<Long> manufacturingIds) {
         return new CustomerOrder(id, customerId, items, status, cancellationReason, manufacturingIds != null ? new ArrayList<>(manufacturingIds) : new ArrayList<>());
-    }
-
-    public void addManufacturingOrderReference(Long manufacturingOrderId) {
-        this.manufacturingOrderIds.add(manufacturingOrderId);
     }
 
     public void cancel(String reason) {

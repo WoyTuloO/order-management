@@ -1,8 +1,6 @@
 package com.example.customerorder.domain.model.valueobject;
 
-
 import com.example.customerorder.config.exceptions.NonPositiveAmountException;
-
 
 public record OrderItem(
         Long productId,

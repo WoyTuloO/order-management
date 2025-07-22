@@ -1,8 +1,6 @@
 package com.example.manufacturingorder.application.command.createManufacturingOrders.handler;
 
-import com.example.manufacturingorder.application.port.in.CancelCustomersManufacturingOrdersUseCase;
 import com.example.manufacturingorder.application.port.in.CreateMultipleManufacturingOrdersUseCase;
-import com.example.manufacturingorder.domain.event.CancelManufacturingOrdersEvent;
 import com.example.manufacturingorder.domain.event.CreateManufacturingOrdersEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.event.EventListener;

@@ -20,11 +20,10 @@ public class UpdateManufacturingOrderStatusHandler implements UpdateManufacturin
     public void updateManufacturingOrderStatus(UpdateManufacturingOrderStatusCommand command) {
 
         ManufacturingOrder manufacturingOrder = orderRepository.findById(command.manufacturingOrderId());
-
         if(manufacturingOrder.getStatus() == ManufacturingStatus.COMPLETED)
             throw new CannotUpdateCompletedOrderException();
 
         manufacturingOrder.updateStatus(command.newStatus(), command.info());
-
+        orderRepository.update(manufacturingOrder);
     }
 }
