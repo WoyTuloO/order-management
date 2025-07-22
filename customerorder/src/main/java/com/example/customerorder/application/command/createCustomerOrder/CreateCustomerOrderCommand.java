@@ -1,4 +1,4 @@
-package com.example.customerorder.application.command;
+package com.example.customerorder.application.command.createCustomerOrder;
 
 import com.example.customerorder.domain.model.valueobject.OrderItem;
 
