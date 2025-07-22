@@ -19,10 +19,10 @@ public class JpaManufacturingOrderRepositoryAdapter implements ManufacturingOrde
     }
 
     @Override
-    public List<Long> save(List<ManufacturingOrder> manufacturingOrders) {
-        return manufacturingOrderRepository.saveAll(manufacturingOrders.stream()
+    public void save(List<ManufacturingOrder> manufacturingOrders) {
+        manufacturingOrderRepository.saveAll(manufacturingOrders.stream()
                 .map(ManufacturingOrderEntity::fromDomainUpdated)
-                .toList()).stream().map(ManufacturingOrderEntity::getId).toList();
+                .toList());
     }
 
     @Override

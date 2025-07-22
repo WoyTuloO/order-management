@@ -5,6 +5,6 @@ import com.example.manufacturingorder.application.command.createManufacturingOrd
 import java.util.List;
 
 public interface CreateMultipleManufacturingOrdersUseCase {
-    List<Long> createManufacturingOrders(CreateManufacturingOrdersCommand command);
+    void createManufacturingOrders(CreateManufacturingOrdersCommand command);
 
 }

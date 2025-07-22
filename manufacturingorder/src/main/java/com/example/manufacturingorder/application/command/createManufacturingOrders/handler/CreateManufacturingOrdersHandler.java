@@ -17,8 +17,8 @@ public class CreateManufacturingOrdersHandler implements CreateMultipleManufactu
     private final ManufacturingOrderRepositoryPort manufacturingOrderRepositoryPort;
 
     @Override
-    public List<Long> createManufacturingOrders(CreateManufacturingOrdersCommand command) {
+    public void createManufacturingOrders(CreateManufacturingOrdersCommand command) {
         List<ManufacturingOrder> manufacturingOrders = ManufacturingOrder.create(command.customerOrderId(), command.items());
-        return manufacturingOrderRepositoryPort.save(manufacturingOrders);
+        manufacturingOrderRepositoryPort.save(manufacturingOrders);
     }
 }

@@ -6,7 +6,7 @@ import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;
 import java.util.List;
 
 public interface ManufacturingOrderRepositoryPort {
-    List<Long> save(List<ManufacturingOrder> manufacturingOrders);
+    void save(List<ManufacturingOrder> manufacturingOrders);
     void save(ManufacturingOrder manufacturingOrder);
     ManufacturingOrder findById(Long id);
     List<ManufacturingOrder> findByCustomerOrderId(Long customerOrderId);

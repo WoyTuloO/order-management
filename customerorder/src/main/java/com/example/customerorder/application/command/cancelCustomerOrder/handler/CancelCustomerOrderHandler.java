@@ -9,9 +9,10 @@ import com.example.manufacturingorder.application.command.cancelCustomersManufac
 import com.example.manufacturingorder.application.port.in.CancelCustomersManufacturingOrdersUseCase;
 import com.example.manufacturingorder.application.port.in.GetCustomersManufacturingOrdersUseCase;
 import com.example.manufacturingorder.application.query.getCustomersManufacturingOrders.GetCustomersManufacturingOrdersQuery;
-import com.example.manufacturingorder.application.query.getCustomersManufacturingOrders.handler.GetCustomersManufacturingOrdersHandler;
+import com.example.manufacturingorder.domain.event.CancelManufacturingOrdersEvent;
 import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,25 +23,33 @@ public class CancelCustomerOrderHandler implements CancelCustomerOrderUseCase {
 
     private final CustomerOrderRepositoryPort customerOrderRepository;
     private final GetCustomersManufacturingOrdersUseCase getCustomersManufacturingOrdersUseCase;
-    private final CancelCustomersManufacturingOrdersUseCase cancelCustomersManufacturingOrdersUseCase;
+
+    private final ApplicationEventPublisher eventPublisher;
 
     @Override
     public void cancelCustomerOrder(CancelCustomerOrderCommand cancelCustomerOrderCommand) {
+
 
         List<GetManufacturingOrderResponse> manufacturingOrders = getCustomersManufacturingOrdersUseCase.getManufacturingOrders(new GetCustomersManufacturingOrdersQuery(cancelCustomerOrderCommand.customerOrderId()));
         boolean isCancelable = manufacturingOrders.stream()
                 .allMatch(o -> o.status() == ManufacturingStatus.PENDING || o.status() == ManufacturingStatus.CANCELLED);
 
         if(isCancelable){
+            // tu jakby co chodzi o to ze jesli wszystkie zamowienia sa jeszcze pending lub cancelled
+            // to mozna anulowac caly customer order - jak jakies jest juz confirmed to nie mozna anulowac calego - wiec zostaje o statusie
+            // jaki aktualnie ma - natomiast pozniej mozna dac event zeby te manufacturing ordery ktore sa pending anulowac
+            // tak zeby kilent mogl anulowac czesciowo swoje zamowienie
             CustomerOrder customerOrder = customerOrderRepository.findById(cancelCustomerOrderCommand.customerOrderId());
             customerOrder.cancel("Order cancelled by customer");
             customerOrderRepository.save(customerOrder);
         }
 
 
-        cancelCustomersManufacturingOrdersUseCase.cancelManufacturingOrders(
-                new CancelCustomersManufacturingOrdersCommand(cancelCustomerOrderCommand.customerOrderId(), "Cancelled by customer order cancellation")
+        eventPublisher.publishEvent(
+                new CancelManufacturingOrdersEvent(cancelCustomerOrderCommand.customerOrderId(), "Cancelled by customer order")
         );
+
+
 
 
 
