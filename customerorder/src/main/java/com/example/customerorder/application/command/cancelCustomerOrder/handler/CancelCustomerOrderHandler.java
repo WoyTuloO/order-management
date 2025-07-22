@@ -26,7 +26,6 @@ public class CancelCustomerOrderHandler implements CancelCustomerOrderUseCase {
     @Override
     public void cancelCustomerOrder(CancelCustomerOrderCommand cancelCustomerOrderCommand) {
 
-
         List<GetManufacturingOrderResponse> manufacturingOrders = manufacturingOrdersFacadeAdapter.getCustomerOrdersManufacturingOrders(cancelCustomerOrderCommand.customerOrderId());
         boolean isCancelable = manufacturingOrders.stream()
                 .allMatch(o -> o.status() == ManufacturingStatus.PENDING || o.status() == ManufacturingStatus.CANCELLED);
@@ -41,14 +40,9 @@ public class CancelCustomerOrderHandler implements CancelCustomerOrderUseCase {
             customerOrderRepository.save(customerOrder);
         }
 
-
         eventPublisher.publishEvent(
                 new CancelManufacturingOrdersEvent(cancelCustomerOrderCommand.customerOrderId(), "Cancelled by customer order")
         );
-
-
-
-
 
     }
 }

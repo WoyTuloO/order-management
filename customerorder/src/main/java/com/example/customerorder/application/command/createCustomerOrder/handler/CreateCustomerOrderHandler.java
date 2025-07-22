@@ -39,12 +39,10 @@ public class CreateCustomerOrderHandler implements CreateCustomerOrderUseCase {
 
         eventPublisher.publishEvent(createManufacturingOrdersEvent);
 
-
         List<Long> manufacturingOrdersIds = new ArrayList<>(
                 manufacturingOrdersFacadeAdapter.getCustomerOrdersManufacturingOrders(customerOrder.getId())
                         .stream().map(GetManufacturingOrderResponse::id).toList()
         );
-
 
         customerOrder.setManufacturingOrderIds(manufacturingOrdersIds);
         customerOrderRepositoryPort.save(customerOrder);

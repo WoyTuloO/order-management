@@ -57,14 +57,14 @@ public class CustomerOrderEntity {
         return entity;
     }
 
-    public CustomerOrder toDomain() {
+    public static CustomerOrder toDomain(CustomerOrderEntity entity) {
         return CustomerOrder.recreate(
-                this.id,
-                this.customerId,
-                new ArrayList<>(this.items.stream().map(OrderItemEntity::toDomain).toList()),
-                this.status,
-                this.info,
-                new ArrayList<>(this.manufacturingOrderIds)
+                entity.id,
+                entity.customerId,
+                new ArrayList<>(entity.items.stream().map(OrderItemEntity::toDomain).toList()),
+                entity.status,
+                entity.info,
+                new ArrayList<>(entity.manufacturingOrderIds)
         );
     }
 

@@ -33,10 +33,7 @@ public class JpaCustomerOrderRepositoryAdapter implements CustomerOrderRepositor
         CustomerOrderEntity customerOrderEntity = orderRepository.findById(id)
                 .orElseThrow(() -> new CustomerResourceNotFound("Customer order not found with id: " + id));
 
-        List<OrderItem> items = customerOrderEntity.getItems().stream()
-                .map(item -> new OrderItem(item.getProductId(), item.getQuantity()))
-                .toList();
-        return new CustomerOrder(customerOrderEntity.getId(), customerOrderEntity.getCustomerId(), items, customerOrderEntity.getStatus(), customerOrderEntity.getInfo(), customerOrderEntity.getManufacturingOrderIds());
+        return CustomerOrderEntity.toDomain(customerOrderEntity);
     }
 
 

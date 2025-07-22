@@ -48,7 +48,7 @@ public class CustomerOrderController {
     }
 
     @PatchMapping("/update-status")
-    public ResponseEntity<Void> cancelCustomersManufacturingOrders(@RequestBody @Valid UpdateGlobalCustomerOrderStatusRequest request) {
+    public ResponseEntity<Void> updateCustomersManufacturingOrders(@RequestBody @Valid UpdateGlobalCustomerOrderStatusRequest request) {
         updateGlobalCustomerOrderStatusUseCase.updateGlobalCustomerOrderStatus(request.toCommand());
         return ResponseEntity.ok().build();
     }
