@@ -85,9 +85,7 @@ class CreateCustomerOrderHandlerTest {
         Long customerId = 1L;
         var command = new CreateCustomerOrderCommand(customerId, List.of());
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            handler.createCustomerOrder(command);
-        });
+        assertThrows(IllegalArgumentException.class, () -> handler.createCustomerOrder(command));
     }
 
     @Test
