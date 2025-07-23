@@ -9,7 +9,7 @@ import com.example.customerorder.application.port.in.CreateCustomerOrderUseCase;
 import com.example.customerorder.application.port.in.GetCustomerOrderUseCase;
 import com.example.customerorder.application.port.in.UpdateGlobalCustomerOrderStatusUseCase;
 import com.example.customerorder.application.query.GetCustomerOrderQuery;
-import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -46,20 +46,10 @@ public class CustomerOrderController {
 
     }
 
-    @Schema(description = "Status zamówienia")
-    public enum OrderStatus {
-        @Schema(description = "Zamówienie oczekujące")
-        PENDING,
-
-        @Schema(description = "Zamówienie potwierdzone")
-        CONFIRMED,
-
-        @Schema(description = "Zamówienie anulowane")
-        CANCELLED,
-
-        @Schema(description = "Zamówienie zrealizowane")
-        COMPLETED
-    }
+    @Operation(
+            summary = "Zmień status zamówienia",
+            description = "Status zamówienia. Wartości: PENDING, CONFIRMED, CANCELLED, COMPLETED"
+    )
     @PatchMapping("/update-status")
     public ResponseEntity<Void> updateCustomersManufacturingOrders(@RequestBody @Valid UpdateGlobalCustomerOrderStatusRequest request) {
         updateGlobalCustomerOrderStatusUseCase.updateGlobalCustomerOrderStatus(request.toCommand());
