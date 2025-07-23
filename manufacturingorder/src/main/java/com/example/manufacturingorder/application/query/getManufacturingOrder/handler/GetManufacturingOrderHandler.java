@@ -17,12 +17,6 @@ public class GetManufacturingOrderHandler implements GetManufacturingOrderUseCas
     @Override
     public GetManufacturingOrderResponse getManufacturingOrder(GetManufacturingOrderQuery query) {
         ManufacturingOrder manufacturingOrder = manufacturingOrderRepositoryPort.findById(query.id());
-        return new GetManufacturingOrderResponse(manufacturingOrder.getId(),
-                manufacturingOrder.getCustomerOrderId(),
-                manufacturingOrder.getProductId(),
-                manufacturingOrder.getRequiredQuantity(),
-                manufacturingOrder.getStatus(),
-                manufacturingOrder.getInfo()
-                );
+        return GetManufacturingOrderResponse.fromDomain(manufacturingOrder);
     }
 }

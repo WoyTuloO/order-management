@@ -38,29 +38,16 @@ public class ManufacturingOrder {
         return new ManufacturingOrder(id, item.componentId(), item.requiredQuantity());
     }
 
-    public void markAsFailed(String reason) {
-        this.status = ManufacturingStatus.FAILED;
-        info = reason;
-    }
-
-    public void markAsCompleted() {
-        this.status = ManufacturingStatus.COMPLETED;
-        info = "Manufacturing completed successfully.";
-    }
 
     public void markAsCancelled(String reason) {
         this.status = ManufacturingStatus.CANCELLED;
         info = reason;
     }
 
-    public void markAsInProgress() {
-        this.status = ManufacturingStatus.IN_PROGRESS;
-        info = "Manufacturing is in progress.";
-    }
 
     public void updateStatus(ManufacturingStatus manufacturingStatus, String info) {
         String infoString = info;
-        if(infoString.isBlank()) {
+        if(infoString != null && infoString.isBlank()) {
             if (manufacturingStatus == ManufacturingStatus.COMPLETED) {
                 infoString = "Manufacturing completed successfully.";
             } else if (manufacturingStatus == ManufacturingStatus.IN_PROGRESS) {

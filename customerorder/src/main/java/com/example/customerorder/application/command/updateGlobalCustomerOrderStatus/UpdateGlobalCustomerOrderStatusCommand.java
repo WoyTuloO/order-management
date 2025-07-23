@@ -1,4 +1,4 @@
-package com.example.customerorder.application.command.UpdateGlobalCustomerOrderStatus;
+package com.example.customerorder.application.command.updateGlobalCustomerOrderStatus;
 
 import com.example.customerorder.domain.model.enums.OrderStatus;
 

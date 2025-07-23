@@ -23,11 +23,10 @@ class CustomerOrderItemResponseTest {
 
         CustomerOrderItemResponse result = CustomerOrderItemResponse.fromManufacturingOrderResponse(manufacturingResponse);
 
-        assertAll(
-                () -> assertEquals(5L, result.productId()),
-                () -> assertEquals(1, result.quantity()),
-                () -> assertEquals(OrderItemStatus.COMPLETED, result.status()),
-                () -> assertEquals("test info", result.info())
-        );
+        assertEquals(5L, result.productId());
+        assertEquals(1, result.quantity());
+        assertEquals(OrderItemStatus.COMPLETED, result.status());
+        assertEquals("test info", result.info());
+
     }
 }

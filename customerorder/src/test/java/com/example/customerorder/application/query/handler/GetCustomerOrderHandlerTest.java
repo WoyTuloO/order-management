@@ -38,11 +38,11 @@ class GetCustomerOrderHandlerTest {
         Long orderId = 1L;
         var query = new GetCustomerOrderQuery(orderId);
 
-        CustomerOrder order = new CustomerOrder( orderId, 100L, List.of(), OrderStatus.CONFIRMED, "Test order", List.of());
+        CustomerOrder order = new CustomerOrder( orderId, 3L, List.of(), OrderStatus.CONFIRMED, "Test order", List.of());
 
         List<GetManufacturingOrderResponse> manufacturingResponses = List.of(
-                new GetManufacturingOrderResponse(101L, orderId, 1L, 2, ManufacturingStatus.PENDING, "Item 1"),
-                new GetManufacturingOrderResponse(102L, orderId, 2L, 1, ManufacturingStatus.COMPLETED, "Item 2")
+                new GetManufacturingOrderResponse(1L, orderId, 1L, 2, ManufacturingStatus.PENDING, "Item 1"),
+                new GetManufacturingOrderResponse(2L, orderId, 2L, 1, ManufacturingStatus.COMPLETED, "Item 2")
         );
 
         when(customerOrderRepositoryPort.findById(orderId)).thenReturn(order);
@@ -53,7 +53,7 @@ class GetCustomerOrderHandlerTest {
 
         assertNotNull(response);
         assertEquals(orderId, response.id());
-        assertEquals(100L, response.customerId());
+        assertEquals(3L, response.customerId());
         assertEquals(OrderStatus.CONFIRMED, response.status());
         assertEquals("Test order", response.info());
         assertEquals(2, response.items().size());
@@ -77,7 +77,7 @@ class GetCustomerOrderHandlerTest {
         Long orderId = 1L;
         GetCustomerOrderQuery query = new GetCustomerOrderQuery(orderId);
 
-        CustomerOrder order = new CustomerOrder(orderId, 100L, List.of(), OrderStatus.PENDING, "Test order", List.of());
+        CustomerOrder order = new CustomerOrder(orderId, 1L, List.of(), OrderStatus.PENDING, "Test order", List.of());
 
         when(customerOrderRepositoryPort.findById(orderId)).thenReturn(order);
         when(manufacturingOrdersFacadeAdapter.getCustomerOrdersManufacturingOrders(orderId))

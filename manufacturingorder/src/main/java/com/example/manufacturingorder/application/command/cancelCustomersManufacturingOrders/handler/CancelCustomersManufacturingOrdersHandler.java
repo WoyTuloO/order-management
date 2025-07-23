@@ -19,8 +19,10 @@ public class CancelCustomersManufacturingOrdersHandler implements CancelCustomer
     @Override
     public void cancelManufacturingOrders(CancelCustomersManufacturingOrdersCommand command) {
         List<ManufacturingOrder> manufacturingOrders = manufacturingOrderRepositoryPort.findByCustomerOrderId(command.customerOrderId());
-        manufacturingOrders.forEach(order -> cancelIfPending(order, command.reason()));
-        manufacturingOrderRepositoryPort.save(manufacturingOrders);
+        if(!manufacturingOrders.isEmpty()) {
+            manufacturingOrders.forEach(order -> cancelIfPending(order, command.reason()));
+            manufacturingOrderRepositoryPort.save(manufacturingOrders);
+        }
     }
 
     private void cancelIfPending(ManufacturingOrder order, String reason) {
