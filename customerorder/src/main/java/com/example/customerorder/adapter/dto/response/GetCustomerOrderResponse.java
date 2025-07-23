@@ -10,7 +10,7 @@ public record GetCustomerOrderResponse(
         Long customerId,
         List<CustomerOrderItemResponse> items,
         OrderStatus status,
-        @JsonInclude(JsonInclude.Include.NON_NULL)
+        @JsonInclude(JsonInclude.Include.NON_EMPTY)
         String info
 ) {
 }

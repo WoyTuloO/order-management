@@ -10,7 +10,7 @@ public record GetManufacturingOrderResponse(
         Long productId,
         int quantity,
         ManufacturingStatus status,
-        @JsonInclude(JsonInclude.Include.NON_NULL)
+        @JsonInclude(JsonInclude.Include.NON_EMPTY)
         String info
 ) {
     public static GetManufacturingOrderResponse fromDomain(ManufacturingOrder manufacturingOrder){

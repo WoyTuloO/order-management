@@ -6,6 +6,7 @@ import com.example.manufacturingorder.adapter.dto.request.UpdateManufacturingOrd
 import com.example.manufacturingorder.application.port.in.*;
 import com.example.manufacturingorder.application.query.getManufacturingOrder.GetManufacturingOrderQuery;
 import com.example.manufacturingorder.application.query.getCustomersManufacturingOrders.GetCustomersManufacturingOrdersQuery;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -46,6 +47,23 @@ public class ManufacturingOrderController {
         return ResponseEntity.ok().build();
     }
 
+    @Schema(description = "Status procesu produkcyjnego")
+    public enum ManufacturingStatus {
+        @Schema(description = "Oczekuje na rozpoczęcie")
+        PENDING,
+
+        @Schema(description = "W trakcie realizacji")
+        IN_PROGRESS,
+
+        @Schema(description = "Zakończono pomyślnie")
+        COMPLETED,
+
+        @Schema(description = "Zakończono niepowodzeniem")
+        FAILED,
+
+        @Schema(description = "Anulowano proces")
+        CANCELLED
+    }
     @PatchMapping("/update-status")
     public ResponseEntity<Void> updateManufacturingOrder(@RequestBody @Valid UpdateManufacturingOrderStatusRequest request) {
         updateManufacturingOrderStatusUseCase.updateManufacturingOrderStatus(request.toCommand());

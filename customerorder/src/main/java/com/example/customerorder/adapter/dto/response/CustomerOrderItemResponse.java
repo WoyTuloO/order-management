@@ -8,7 +8,7 @@ public record CustomerOrderItemResponse(
         Long productId,
         int quantity,
         OrderItemStatus status,
-        @JsonInclude(JsonInclude.Include.NON_NULL)
+        @JsonInclude(JsonInclude.Include.NON_EMPTY)
         String info
 ) {
     public static CustomerOrderItemResponse fromManufacturingOrderResponse(GetManufacturingOrderResponse getManufacturingOrderResponse) {
