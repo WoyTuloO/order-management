@@ -24,6 +24,8 @@ Although the modules are independent, they can communicate:
 
 2. **Run the application** by starting the `ItsolutionsppApplication` class.
 
+Application uses lombok - make sure to use java 21
+
 After the application starts, a full overview of available endpoints is accessible via **Swagger UI**:
 
 ```
@@ -41,7 +43,7 @@ http://localhost:8080/swagger-ui/index.html
 
 ##  Technologies
 
-* Java 17+
+* Java 21
 * Spring Boot 3+
 * 2 PostgreSQL databases (one for each module)
 * JPA + Hibernate
