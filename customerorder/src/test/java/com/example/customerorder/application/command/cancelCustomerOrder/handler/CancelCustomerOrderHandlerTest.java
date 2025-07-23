@@ -4,7 +4,7 @@ import com.example.customerorder.adapter.out.external.ManufacturingOrderFacadeAd
 import com.example.customerorder.application.command.cancelCustomerOrder.CancelCustomerOrderCommand;
 import com.example.customerorder.application.port.out.CustomerOrderRepositoryPort;
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;
-import com.example.manufacturingorder.adapter.in.rest.dto.response.GetManufacturingOrderResponse;
+import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;
 import com.example.manufacturingorder.domain.event.CancelManufacturingOrdersEvent;
 import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;
 import org.junit.jupiter.api.Test;

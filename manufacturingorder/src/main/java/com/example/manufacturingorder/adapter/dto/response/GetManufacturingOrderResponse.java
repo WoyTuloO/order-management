@@ -1,7 +1,8 @@
-package com.example.manufacturingorder.adapter.in.rest.dto.response;
+package com.example.manufacturingorder.adapter.dto.response;
 
 import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;
 import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 public record GetManufacturingOrderResponse(
         Long id,
@@ -9,6 +10,7 @@ public record GetManufacturingOrderResponse(
         Long productId,
         int quantity,
         ManufacturingStatus status,
+        @JsonInclude(JsonInclude.Include.NON_NULL)
         String info
 ) {
     public static GetManufacturingOrderResponse fromDomain(ManufacturingOrder manufacturingOrder){

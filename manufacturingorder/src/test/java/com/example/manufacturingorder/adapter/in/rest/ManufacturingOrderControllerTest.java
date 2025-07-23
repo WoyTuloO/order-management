@@ -1,9 +1,9 @@
 package com.example.manufacturingorder.adapter.in.rest;
 
-import com.example.manufacturingorder.adapter.in.rest.dto.request.CancelManufacturingOrderRequest;
-import com.example.manufacturingorder.adapter.in.rest.dto.request.CreateManufacturingOrderRequest;
-import com.example.manufacturingorder.adapter.in.rest.dto.request.UpdateManufacturingOrderStatusRequest;
-import com.example.manufacturingorder.adapter.in.rest.dto.response.GetManufacturingOrderResponse;
+import com.example.manufacturingorder.adapter.dto.request.CancelManufacturingOrderRequest;
+import com.example.manufacturingorder.adapter.dto.request.CreateManufacturingOrderRequest;
+import com.example.manufacturingorder.adapter.dto.request.UpdateManufacturingOrderStatusRequest;
+import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;
 import com.example.manufacturingorder.application.port.in.*;
 import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;
 import org.junit.jupiter.api.Test;

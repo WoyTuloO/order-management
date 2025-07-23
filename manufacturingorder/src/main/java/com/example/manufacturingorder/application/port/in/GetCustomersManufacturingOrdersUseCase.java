@@ -1,6 +1,6 @@
 package com.example.manufacturingorder.application.port.in;
 
-import com.example.manufacturingorder.adapter.in.rest.dto.response.GetManufacturingOrderResponse;
+import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;
 import com.example.manufacturingorder.application.query.getCustomersManufacturingOrders.GetCustomersManufacturingOrdersQuery;
 
 

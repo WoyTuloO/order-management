@@ -8,7 +8,7 @@ import com.example.customerorder.application.port.out.ManufacturingOrderFacadePo
 import com.example.customerorder.application.query.GetCustomerOrderQuery;
 import com.example.customerorder.adapter.dto.response.GetCustomerOrderResponse;
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;
-import com.example.manufacturingorder.adapter.in.rest.dto.response.GetManufacturingOrderResponse;
+import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

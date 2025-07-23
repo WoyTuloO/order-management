@@ -6,7 +6,7 @@ import com.example.customerorder.application.port.out.CustomerOrderRepositoryPor
 import com.example.customerorder.application.port.out.ManufacturingOrderFacadePort;
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;
 import com.example.customerorder.domain.model.enums.OrderStatus;
-import com.example.manufacturingorder.adapter.in.rest.dto.response.GetManufacturingOrderResponse;
+import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;
 import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

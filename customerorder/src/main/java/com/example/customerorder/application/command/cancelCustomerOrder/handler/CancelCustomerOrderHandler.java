@@ -5,7 +5,7 @@ import com.example.customerorder.application.command.cancelCustomerOrder.CancelC
 import com.example.customerorder.application.port.in.CancelCustomerOrderUseCase;
 import com.example.customerorder.application.port.out.CustomerOrderRepositoryPort;
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;
-import com.example.manufacturingorder.adapter.in.rest.dto.response.GetManufacturingOrderResponse;
+import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;
 import com.example.manufacturingorder.domain.event.CancelManufacturingOrdersEvent;
 import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;
 import lombok.RequiredArgsConstructor;

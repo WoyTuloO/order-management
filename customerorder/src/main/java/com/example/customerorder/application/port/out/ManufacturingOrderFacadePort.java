@@ -1,6 +1,6 @@
 package com.example.customerorder.application.port.out;
 
-import com.example.manufacturingorder.adapter.in.rest.dto.response.GetManufacturingOrderResponse;
+import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;
 
 import java.util.List;
 

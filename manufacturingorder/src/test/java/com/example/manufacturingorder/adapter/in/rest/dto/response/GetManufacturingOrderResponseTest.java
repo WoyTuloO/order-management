@@ -1,5 +1,6 @@
 package com.example.manufacturingorder.adapter.in.rest.dto.response;
 
+import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;
 import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;
 import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;
 import org.junit.jupiter.api.Test;

@@ -1,5 +1,6 @@
 package com.example.manufacturingorder.adapter.in.rest.dto.request;
 
+import com.example.manufacturingorder.adapter.dto.request.CancelManufacturingOrderRequest;
 import com.example.manufacturingorder.application.command.cancelManufacturingOrder.CancelManufacturingOrderCommand;
 import org.junit.jupiter.api.Test;
 

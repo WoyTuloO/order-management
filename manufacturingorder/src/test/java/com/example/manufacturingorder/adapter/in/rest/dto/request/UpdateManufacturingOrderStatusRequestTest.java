@@ -1,5 +1,6 @@
 package com.example.manufacturingorder.adapter.in.rest.dto.request;
 
+import com.example.manufacturingorder.adapter.dto.request.UpdateManufacturingOrderStatusRequest;
 import com.example.manufacturingorder.application.command.updateManufacturingOrderStatus.UpdateManufacturingOrderStatusCommand;
 import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;
 import org.junit.jupiter.api.Test;

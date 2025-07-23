@@ -8,7 +8,7 @@ import com.example.customerorder.application.query.GetCustomerOrderQuery;
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;
 import com.example.customerorder.domain.model.enums.OrderItemStatus;
 import com.example.customerorder.domain.model.enums.OrderStatus;
-import com.example.manufacturingorder.adapter.in.rest.dto.response.GetManufacturingOrderResponse;
+import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;
 import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -1,5 +1,6 @@
 package com.example.manufacturingorder.adapter.in.rest.dto.request;
 
+import com.example.manufacturingorder.adapter.dto.request.CreateMultipleManufacturingOrdersRequest;
 import com.example.manufacturingorder.application.command.createManufacturingOrders.CreateManufacturingOrdersCommand;
 import com.example.manufacturingorder.domain.model.valueobject.ManufacturingItem;
 import org.junit.jupiter.api.Test;
