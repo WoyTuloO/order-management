@@ -2,7 +2,7 @@ package com.example.manufacturingorder.application.command.cancelManufacturingOr
 
 import com.example.manufacturingorder.application.command.cancelManufacturingOrder.CancelManufacturingOrderCommand;
 import com.example.manufacturingorder.application.port.in.CancelManufacturingOrderUseCase;
-import com.example.manufacturingorder.application.port.out.ManufacturingOrderRepositoryPort;
+import com.example.manufacturingorder.domain.port.ManufacturingOrderRepositoryPort;
 import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

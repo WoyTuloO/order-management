@@ -2,7 +2,7 @@ package com.example.manufacturingorder.application.query.getManufacturingOrder.h
 
 import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;
 import com.example.manufacturingorder.application.port.in.GetManufacturingOrderUseCase;
-import com.example.manufacturingorder.application.port.out.ManufacturingOrderRepositoryPort;
+import com.example.manufacturingorder.domain.port.ManufacturingOrderRepositoryPort;
 import com.example.manufacturingorder.application.query.getManufacturingOrder.GetManufacturingOrderQuery;
 import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;
 import lombok.RequiredArgsConstructor;

@@ -3,8 +3,8 @@ package com.example.customerorder.application.query.handler;
 
 import com.example.customerorder.adapter.dto.response.CustomerOrderItemResponse;
 import com.example.customerorder.application.port.in.GetCustomerOrderUseCase;
-import com.example.customerorder.application.port.out.CustomerOrderRepositoryPort;
-import com.example.customerorder.application.port.out.ManufacturingOrderFacadePort;
+import com.example.customerorder.domain.port.CustomerOrderRepositoryPort;
+import com.example.customerorder.domain.port.ManufacturingOrderFacadePort;
 import com.example.customerorder.application.query.GetCustomerOrderQuery;
 import com.example.customerorder.adapter.dto.response.GetCustomerOrderResponse;
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;

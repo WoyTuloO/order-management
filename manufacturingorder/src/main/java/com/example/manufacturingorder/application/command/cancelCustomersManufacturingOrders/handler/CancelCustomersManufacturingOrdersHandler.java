@@ -2,7 +2,7 @@ package com.example.manufacturingorder.application.command.cancelCustomersManufa
 
 import com.example.manufacturingorder.application.command.cancelCustomersManufacturingOrders.CancelCustomersManufacturingOrdersCommand;
 import com.example.manufacturingorder.application.port.in.CancelCustomersManufacturingOrdersUseCase;
-import com.example.manufacturingorder.application.port.out.ManufacturingOrderRepositoryPort;
+import com.example.manufacturingorder.domain.port.ManufacturingOrderRepositoryPort;
 import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;
 import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;
 import lombok.RequiredArgsConstructor;

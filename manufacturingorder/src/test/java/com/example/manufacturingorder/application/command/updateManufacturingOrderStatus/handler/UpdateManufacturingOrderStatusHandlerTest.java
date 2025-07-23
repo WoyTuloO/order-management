@@ -1,7 +1,7 @@
 package com.example.manufacturingorder.application.command.updateManufacturingOrderStatus.handler;
 
 import com.example.manufacturingorder.application.command.updateManufacturingOrderStatus.UpdateManufacturingOrderStatusCommand;
-import com.example.manufacturingorder.application.port.out.ManufacturingOrderRepositoryPort;
+import com.example.manufacturingorder.domain.port.ManufacturingOrderRepositoryPort;
 import com.example.manufacturingorder.config.exceptions.CannotUpdateCompletedOrderException;
 import com.example.manufacturingorder.config.exceptions.ManufacturingResourceNotFound;
 import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;

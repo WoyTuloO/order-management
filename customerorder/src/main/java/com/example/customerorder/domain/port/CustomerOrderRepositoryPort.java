@@ -1,4 +1,4 @@
-package com.example.customerorder.application.port.out;
+package com.example.customerorder.domain.port;
 
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;
 

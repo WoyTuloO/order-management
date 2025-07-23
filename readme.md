@@ -48,7 +48,7 @@ http://localhost:8080/swagger-ui/index.html
 * Maven
 * JUnit 5 + Mockito (unit testing)
 
-The entire application is covered by **unit tests** to ensure correctness and maintainability.
+The entire application is covered by unit tests - line coverage 98%.
 
 ---
 

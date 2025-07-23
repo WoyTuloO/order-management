@@ -2,7 +2,7 @@ package com.example.manufacturingorder.application.command.createManufacturingOr
 
 import com.example.manufacturingorder.application.command.createManufacturingOrder.CreateManufacturingOrderCommand;
 import com.example.manufacturingorder.application.port.in.CreateManufacturingOrderUseCase;
-import com.example.manufacturingorder.application.port.out.ManufacturingOrderRepositoryPort;
+import com.example.manufacturingorder.domain.port.ManufacturingOrderRepositoryPort;
 import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

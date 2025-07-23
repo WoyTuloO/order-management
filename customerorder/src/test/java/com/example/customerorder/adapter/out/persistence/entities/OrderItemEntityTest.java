@@ -1,4 +1,4 @@
-package com.example.customerorder.adapter.out.persistance.entities;
+package com.example.customerorder.adapter.out.persistence.entities;
 
 import com.example.customerorder.domain.model.valueobject.OrderItem;
 import org.junit.jupiter.api.Test;

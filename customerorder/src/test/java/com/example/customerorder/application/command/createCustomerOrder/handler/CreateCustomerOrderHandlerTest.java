@@ -1,8 +1,8 @@
 package com.example.customerorder.application.command.createCustomerOrder.handler;
 
 import com.example.customerorder.application.command.createCustomerOrder.CreateCustomerOrderCommand;
-import com.example.customerorder.application.port.out.CustomerOrderRepositoryPort;
-import com.example.customerorder.application.port.out.ManufacturingOrderFacadePort;
+import com.example.customerorder.domain.port.CustomerOrderRepositoryPort;
+import com.example.customerorder.domain.port.ManufacturingOrderFacadePort;
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;
 import com.example.customerorder.domain.model.valueobject.OrderItem;
 import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;

@@ -1,7 +1,7 @@
-package com.example.customerorder.adapter.out.persistance;
+package com.example.customerorder.adapter.out.persistence;
 
 
-import com.example.customerorder.adapter.out.persistance.entities.CustomerOrderEntity;
+import com.example.customerorder.adapter.out.persistence.entities.CustomerOrderEntity;
 import com.example.customerorder.config.exceptions.CustomerResourceNotFound;
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;
 import com.example.customerorder.domain.model.enums.OrderStatus;

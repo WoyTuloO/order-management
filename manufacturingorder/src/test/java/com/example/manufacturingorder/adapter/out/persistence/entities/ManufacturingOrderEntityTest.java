@@ -1,4 +1,4 @@
-package com.example.manufacturingorder.adapter.out.persistance.entity;
+package com.example.manufacturingorder.adapter.out.persistence.entities;
 
 import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;
 import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;

@@ -1,7 +1,6 @@
-package com.example.manufacturingorder.application.port.out;
+package com.example.manufacturingorder.domain.port;
 
 import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;
-import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;
 
 import java.util.List;
 

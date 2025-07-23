@@ -1,7 +1,7 @@
 package com.example.manufacturingorder.application.query.getManufacturingOrder.handler;
 
 import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;
-import com.example.manufacturingorder.application.port.out.ManufacturingOrderRepositoryPort;
+import com.example.manufacturingorder.domain.port.ManufacturingOrderRepositoryPort;
 import com.example.manufacturingorder.application.query.getManufacturingOrder.GetManufacturingOrderQuery;
 import com.example.manufacturingorder.config.exceptions.ManufacturingResourceNotFound;
 import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;

@@ -1,7 +1,7 @@
 package com.example.manufacturingorder.application.command.cancelManufacturingOrder.handler;
 
 import com.example.manufacturingorder.application.command.cancelManufacturingOrder.CancelManufacturingOrderCommand;
-import com.example.manufacturingorder.application.port.out.ManufacturingOrderRepositoryPort;
+import com.example.manufacturingorder.domain.port.ManufacturingOrderRepositoryPort;
 import com.example.manufacturingorder.config.exceptions.ManufacturingResourceNotFound;
 import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;
 import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;

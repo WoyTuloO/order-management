@@ -1,4 +1,4 @@
-package com.example.customerorder.adapter.out.persistance.entities;
+package com.example.customerorder.adapter.out.persistence.entities;
 
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;
 import com.example.customerorder.domain.model.enums.OrderStatus;

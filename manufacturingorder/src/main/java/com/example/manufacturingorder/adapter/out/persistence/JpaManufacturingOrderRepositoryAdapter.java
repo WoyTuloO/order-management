@@ -1,10 +1,9 @@
-package com.example.manufacturingorder.adapter.out.persistance;
+package com.example.manufacturingorder.adapter.out.persistence;
 
-import com.example.manufacturingorder.adapter.out.persistance.entity.ManufacturingOrderEntity;
-import com.example.manufacturingorder.application.port.out.ManufacturingOrderRepositoryPort;
+import com.example.manufacturingorder.adapter.out.persistence.entities.ManufacturingOrderEntity;
+import com.example.manufacturingorder.domain.port.ManufacturingOrderRepositoryPort;
 import com.example.manufacturingorder.config.exceptions.ManufacturingResourceNotFound;
 import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;
-import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.example.manufacturingorder.application.query.getCustomersManufacturingOrders.handler;
 
 import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;
-import com.example.manufacturingorder.application.port.out.ManufacturingOrderRepositoryPort;
+import com.example.manufacturingorder.domain.port.ManufacturingOrderRepositoryPort;
 import com.example.manufacturingorder.application.query.getCustomersManufacturingOrders.GetCustomersManufacturingOrdersQuery;
 import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;
 import com.example.manufacturingorder.domain.model.enums.ManufacturingStatus;

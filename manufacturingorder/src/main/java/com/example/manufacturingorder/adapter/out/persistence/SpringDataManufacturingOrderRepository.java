@@ -1,7 +1,6 @@
-package com.example.manufacturingorder.adapter.out.persistance;
+package com.example.manufacturingorder.adapter.out.persistence;
 
-import com.example.manufacturingorder.adapter.out.persistance.entity.ManufacturingOrderEntity;
-import com.example.manufacturingorder.domain.model.aggregate.ManufacturingOrder;
+import com.example.manufacturingorder.adapter.out.persistence.entities.ManufacturingOrderEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

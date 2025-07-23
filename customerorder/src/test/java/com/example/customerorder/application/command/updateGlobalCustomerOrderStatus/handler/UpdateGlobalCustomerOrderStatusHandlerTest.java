@@ -1,8 +1,8 @@
 package com.example.customerorder.application.command.updateGlobalCustomerOrderStatus.handler;
 
 import com.example.customerorder.application.command.updateGlobalCustomerOrderStatus.UpdateGlobalCustomerOrderStatusCommand;
-import com.example.customerorder.application.port.out.CustomerOrderRepositoryPort;
-import com.example.customerorder.application.port.out.ManufacturingOrderFacadePort;
+import com.example.customerorder.domain.port.CustomerOrderRepositoryPort;
+import com.example.customerorder.domain.port.ManufacturingOrderFacadePort;
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;
 import com.example.customerorder.domain.model.enums.OrderStatus;
 import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;

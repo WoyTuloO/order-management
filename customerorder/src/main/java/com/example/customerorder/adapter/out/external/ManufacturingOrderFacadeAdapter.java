@@ -1,6 +1,6 @@
 package com.example.customerorder.adapter.out.external;
 
-import com.example.customerorder.application.port.out.ManufacturingOrderFacadePort;
+import com.example.customerorder.domain.port.ManufacturingOrderFacadePort;
 import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;
 import com.example.manufacturingorder.application.port.in.GetCustomersManufacturingOrdersUseCase;
 import com.example.manufacturingorder.application.query.getCustomersManufacturingOrders.GetCustomersManufacturingOrdersQuery;

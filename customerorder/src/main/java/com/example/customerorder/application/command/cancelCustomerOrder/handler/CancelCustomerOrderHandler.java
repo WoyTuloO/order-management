@@ -3,7 +3,7 @@ package com.example.customerorder.application.command.cancelCustomerOrder.handle
 import com.example.customerorder.adapter.out.external.ManufacturingOrderFacadeAdapter;
 import com.example.customerorder.application.command.cancelCustomerOrder.CancelCustomerOrderCommand;
 import com.example.customerorder.application.port.in.CancelCustomerOrderUseCase;
-import com.example.customerorder.application.port.out.CustomerOrderRepositoryPort;
+import com.example.customerorder.domain.port.CustomerOrderRepositoryPort;
 import com.example.customerorder.domain.model.aggregate.CustomerOrder;
 import com.example.manufacturingorder.adapter.dto.response.GetManufacturingOrderResponse;
 import com.example.manufacturingorder.domain.event.CancelManufacturingOrdersEvent;
