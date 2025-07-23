@@ -20,7 +20,6 @@ class GetManufacturingOrderResponseTest {
         assertEquals("Done", response.info());
     }
 
-    // Test fromDomain factory method
     @Test
     void shouldCreateResponseFromDomainObject() {
         ManufacturingOrder order = new ManufacturingOrder(1L, 2L, 3L, 5, ManufacturingStatus.IN_PROGRESS, "Processing");
