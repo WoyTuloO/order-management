@@ -38,7 +38,7 @@ class GetCustomerOrderHandlerTest {
         Long orderId = 1L;
         var query = new GetCustomerOrderQuery(orderId);
 
-        CustomerOrder order = new CustomerOrder( orderId, 3L, List.of(), OrderStatus.CONFIRMED, "Test order", List.of());
+        CustomerOrder order = new CustomerOrder( orderId, 3L, List.of(), OrderStatus.CONFIRMED, "Test order");
 
         List<GetManufacturingOrderResponse> manufacturingResponses = List.of(
                 new GetManufacturingOrderResponse(1L, orderId, 1L, 2, ManufacturingStatus.PENDING, "Item 1"),
@@ -77,7 +77,7 @@ class GetCustomerOrderHandlerTest {
         Long orderId = 1L;
         GetCustomerOrderQuery query = new GetCustomerOrderQuery(orderId);
 
-        CustomerOrder order = new CustomerOrder(orderId, 1L, List.of(), OrderStatus.PENDING, "Test order", List.of());
+        CustomerOrder order = new CustomerOrder(orderId, 1L, List.of(), OrderStatus.PENDING, "Test order");
 
         when(customerOrderRepositoryPort.findById(orderId)).thenReturn(order);
         when(manufacturingOrdersFacadeAdapter.getCustomerOrdersManufacturingOrders(orderId))

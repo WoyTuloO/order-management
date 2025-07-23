@@ -20,8 +20,7 @@ class CustomerOrderEntityTest {
                 100L,
                 List.of(new OrderItem(1L, 1), new OrderItem(2L, 2)),
                 OrderStatus.CONFIRMED,
-                "Special order",
-                List.of(101L, 102L)
+                "Special order"
         );
 
         CustomerOrderEntity entity = CustomerOrderEntity.fromDomain(order);
@@ -30,7 +29,6 @@ class CustomerOrderEntityTest {
         assertEquals(order.getCustomerId(), entity.getCustomerId());
         assertEquals(order.getStatus(), entity.getStatus());
         assertEquals(order.getInfo(), entity.getInfo());
-        assertEquals(order.getManufacturingOrderIds(), entity.getManufacturingOrderIds());
         assertEquals(order.getItems().size(), entity.getItems().size());
     }
 
@@ -46,7 +44,6 @@ class CustomerOrderEntityTest {
                 new OrderItemEntity(1L, 2),
                 new OrderItemEntity(2L, 1)
         )));
-        entity.setManufacturingOrderIds(new ArrayList<>(List.of(1L, 2L)));
 
         CustomerOrder domain = CustomerOrderEntity.toDomain(entity);
 
@@ -54,7 +51,6 @@ class CustomerOrderEntityTest {
         assertEquals(entity.getCustomerId(), domain.getCustomerId());
         assertEquals(entity.getStatus(), domain.getStatus());
         assertEquals(entity.getInfo(), domain.getInfo());
-        assertEquals(entity.getManufacturingOrderIds(), domain.getManufacturingOrderIds());
         assertEquals(entity.getItems().size(), domain.getItems().size());
 
     }

@@ -29,7 +29,7 @@ class JpaCustomerOrderRepositoryAdapterTest {
     @Test
     void save_shouldConvertAndSaveEntity() {
         CustomerOrder order = CustomerOrder.recreate(
-                1L, 100L, List.of(), OrderStatus.CONFIRMED, "test", List.of(12L));
+                1L, 100L, List.of(), OrderStatus.CONFIRMED, "test");
         CustomerOrderEntity savedEntity = CustomerOrderEntity.fromDomain(order);
         savedEntity.setId(1L);
 
@@ -68,7 +68,7 @@ class JpaCustomerOrderRepositoryAdapterTest {
     void update_shouldUpdateExistingEntity() {
         Long orderId = 1L;
         CustomerOrder order = CustomerOrder.recreate(
-                orderId, 1L, List.of(), OrderStatus.COMPLETED, "Updated info", List.of(1L, 2L));
+                orderId, 1L, List.of(), OrderStatus.COMPLETED, "Updated info");
 
         CustomerOrderEntity existingEntity = new CustomerOrderEntity();
         existingEntity.setId(orderId);
@@ -82,14 +82,14 @@ class JpaCustomerOrderRepositoryAdapterTest {
         verify(orderRepository, times(1)).save(existingEntity);
         assertEquals(OrderStatus.COMPLETED, existingEntity.getStatus());
         assertEquals("Updated info", existingEntity.getInfo());
-        assertEquals(2, existingEntity.getManufacturingOrderIds().size());
+
     }
 
     @Test
     void update_shouldThrowExceptionWhenOrderNotFound() {
         Long orderId = 999L;
         CustomerOrder order = CustomerOrder.recreate(
-                orderId, 100L, List.of(), OrderStatus.CONFIRMED, "Test", List.of());
+                orderId, 100L, List.of(), OrderStatus.CONFIRMED, "Test");
 
         when(orderRepository.findById(orderId)).thenReturn(Optional.empty());
 

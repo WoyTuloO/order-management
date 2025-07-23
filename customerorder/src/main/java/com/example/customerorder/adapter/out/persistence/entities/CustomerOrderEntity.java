@@ -36,11 +36,7 @@ public class CustomerOrderEntity {
     )
     private List<OrderItemEntity> items = new ArrayList<>();
 
-    @ElementCollection
-    @CollectionTable(name = "customer_order_manufacturing_orders",
-            joinColumns = @JoinColumn(name = "customer_order_id"))
-    @Column(name = "manufacturing_order_id")
-    private List<Long> manufacturingOrderIds = new ArrayList<>();
+
 
 
 
@@ -53,7 +49,6 @@ public class CustomerOrderEntity {
         entity.items = new ArrayList<>(order.getItems().stream()
                 .map(OrderItemEntity::fromDomain)
                 .toList());
-        entity.manufacturingOrderIds = new ArrayList<>(order.getManufacturingOrderIds());
         return entity;
     }
 
@@ -63,9 +58,8 @@ public class CustomerOrderEntity {
                 entity.customerId,
                 new ArrayList<>(entity.items.stream().map(OrderItemEntity::toDomain).toList()),
                 entity.status,
-                entity.info,
-                new ArrayList<>(entity.manufacturingOrderIds)
-        );
+                entity.info);
+
     }
 
 }

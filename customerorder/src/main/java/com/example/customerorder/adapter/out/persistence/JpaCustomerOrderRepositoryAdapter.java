@@ -7,7 +7,6 @@ import com.example.customerorder.domain.model.aggregate.CustomerOrder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 
 
 @Repository
@@ -43,7 +42,6 @@ public class JpaCustomerOrderRepositoryAdapter implements CustomerOrderRepositor
 
         entity.setStatus(order.getStatus());
         entity.setInfo(order.getInfo());
-        entity.setManufacturingOrderIds(new ArrayList<>(order.getManufacturingOrderIds()));
 
         orderRepository.save(entity);
 

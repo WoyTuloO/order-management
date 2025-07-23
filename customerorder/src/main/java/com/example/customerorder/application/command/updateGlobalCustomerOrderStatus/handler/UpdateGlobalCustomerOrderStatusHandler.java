@@ -27,12 +27,12 @@ public class UpdateGlobalCustomerOrderStatusHandler implements UpdateGlobalCusto
         CustomerOrder customerOrder = customerOrderRepositoryPort.findById(command.customerOrderId());
 
         List<GetManufacturingOrderResponse> manufacturingOrders = manufacturingOrdersFacadeAdapter.getCustomerOrdersManufacturingOrders(customerOrder.getCustomerId());
-        boolean allOrdersCompleted = manufacturingOrders.stream().allMatch(o -> o.status() == ManufacturingStatus.COMPLETED);
+        boolean allOrdersCompleted = manufacturingOrders.stream().allMatch(o -> o.status() == ManufacturingStatus.COMPLETED || o.status() == ManufacturingStatus.CANCELLED);
 
         if(allOrdersCompleted){
             customerOrder.setStatus(OrderStatus.COMPLETED);
             customerOrderRepositoryPort.update(customerOrder);
-        }else{
+        }else if(command.newStatus() != OrderStatus.COMPLETED) {
             customerOrder.setStatus(command.newStatus());
             customerOrder.setInfo(command.info());
             customerOrderRepositoryPort.update(customerOrder);
