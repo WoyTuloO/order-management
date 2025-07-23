@@ -1,4 +1,5 @@
 package com.example.customerorder.application.query;
 
-public record GetCustomerOrderQuery(long id) {
-}
+public record GetCustomerOrderQuery(
+        Long id
+) {}
