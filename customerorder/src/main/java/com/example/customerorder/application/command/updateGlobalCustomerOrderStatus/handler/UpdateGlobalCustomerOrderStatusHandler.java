@@ -1,6 +1,6 @@
-package com.example.customerorder.application.command.UpdateGlobalCustomerOrderStatus.handler;
+package com.example.customerorder.application.command.updateGlobalCustomerOrderStatus.handler;
 
-import com.example.customerorder.application.command.UpdateGlobalCustomerOrderStatus.UpdateGlobalCustomerOrderStatusCommand;
+import com.example.customerorder.application.command.updateGlobalCustomerOrderStatus.UpdateGlobalCustomerOrderStatusCommand;
 import com.example.customerorder.application.port.in.UpdateGlobalCustomerOrderStatusUseCase;
 import com.example.customerorder.application.port.out.CustomerOrderRepositoryPort;
 import com.example.customerorder.application.port.out.ManufacturingOrderFacadePort;

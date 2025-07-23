@@ -1,6 +1,6 @@
 package com.example.customerorder.adapter.dto.request;
 
-import com.example.customerorder.application.command.UpdateGlobalCustomerOrderStatus.UpdateGlobalCustomerOrderStatusCommand;
+import com.example.customerorder.application.command.updateGlobalCustomerOrderStatus.UpdateGlobalCustomerOrderStatusCommand;
 import com.example.customerorder.domain.model.enums.OrderStatus;
 
 public record UpdateGlobalCustomerOrderStatusRequest(

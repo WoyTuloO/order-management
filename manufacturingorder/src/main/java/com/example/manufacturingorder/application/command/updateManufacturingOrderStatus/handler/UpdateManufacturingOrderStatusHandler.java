@@ -18,7 +18,6 @@ public class UpdateManufacturingOrderStatusHandler implements UpdateManufacturin
 
     @Override
     public void updateManufacturingOrderStatus(UpdateManufacturingOrderStatusCommand command) {
-
         ManufacturingOrder manufacturingOrder = orderRepository.findById(command.manufacturingOrderId());
         if(manufacturingOrder.getStatus() == ManufacturingStatus.COMPLETED)
             throw new CannotUpdateCompletedOrderException();

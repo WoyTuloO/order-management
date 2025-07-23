@@ -12,6 +12,9 @@ public record GetManufacturingOrderResponse(
         String info
 ) {
     public static GetManufacturingOrderResponse fromDomain(ManufacturingOrder manufacturingOrder){
+        if (manufacturingOrder == null) {
+            return null;
+        }
         return new GetManufacturingOrderResponse(manufacturingOrder.getId(),
                 manufacturingOrder.getCustomerOrderId(),
                 manufacturingOrder.getProductId(),
